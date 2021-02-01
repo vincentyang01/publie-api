@@ -10,3 +10,4 @@ class Business < ApplicationRecord
     validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword) }
 
 end
+
