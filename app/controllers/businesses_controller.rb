@@ -1,14 +1,17 @@
 class BusinessesController < ApplicationController
-  def index
-    # byebug
-    @businesses = Business.all
 
+  def index
+    @businesses = Business.all
     render json: @businesses
   end
 
+  def new
+    @business = Business.new
+  end
+
+
   def create
     @business = Business.create(business_params)
-    # byebug
     if @business.valid?
       render json: @business, status: :created
     else
